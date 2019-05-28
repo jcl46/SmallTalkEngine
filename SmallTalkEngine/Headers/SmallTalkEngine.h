@@ -3,11 +3,7 @@
 class SmallTalkEngine
 {
 	public:
-		class GameObject
-		{
-		public:
-			
-		};
+		double version = 0.3;
 		class Point2D
 		{
 		public:
@@ -49,6 +45,14 @@ class SmallTalkEngine
 				Y = y;
 				Velocity = 0.0f;
 			}
+
+		};
+		class GameObject2D
+		{
+		public:
+			Point2D position;
+			float rotX;
+			float rotY;
 
 		};
 		class Area
