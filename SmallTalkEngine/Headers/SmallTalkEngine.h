@@ -20,12 +20,13 @@ class SmallTalkEngine
 			}
 			float DistanceCalc(Point2D point1, Point2D point2)
 			{
+				Math calc;
 				float temp = point1.X + point2.X;
 				float temp2 = point1.Y + point2.Y;
-				temp = pow(temp,2);
-				temp2 = pow(temp2, 2);
+				temp = calc.Pow(temp,2);
+				temp2 = calc.Pow(temp2, 2);
 				temp = temp + temp2;
-				temp = sqrt(temp);
+				temp = calc.Sqrt(temp);
 				return temp;
 
 			}
