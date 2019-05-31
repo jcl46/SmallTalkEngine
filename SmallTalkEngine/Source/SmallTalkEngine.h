@@ -1,9 +1,11 @@
 ﻿#include "SmallTalkMath.h"
+
 //I intend to remove the need for external libs later - but for now i'll use them or... hmm
 class SmallTalkEngine
 {
 	public:
 		double version = 0.3;
+		
 		class Point2D
 		{
 		public:
@@ -53,6 +55,7 @@ class SmallTalkEngine
 			Point2D position;
 			float rotX;
 			float rotY;
+			
 
 		};
 		class Area
@@ -73,4 +76,29 @@ class SmallTalkEngine
 
 			}
 		};
+		class AudioListener 
+		{
+		public:
+			float volume;
+			float getVolume() 
+			{
+
+			}
+		};
+		class AudioPlayer 
+		{
+		public:
+			static AudioPlayer* globalPlayers;
+			static int anders;
+			AudioPlayer()
+			{
+				
+				//attach itself to the global list of soundplaying objects
+			}
+		};
+		void selfTest() 
+		{
+			 AudioPlayer::globalPlayers = new AudioPlayer[1];
+		}
+
 };
