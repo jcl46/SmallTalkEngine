@@ -76,6 +76,11 @@ class SmallTalkEngine
 
 			}
 		};
+        class Audio
+        {
+        public:
+            std::string audioPath;
+        };
 		class AudioListener 
 		{
 		public:
@@ -91,7 +96,7 @@ class SmallTalkEngine
 		{
 		public:
 			static AudioPlayer* globalPlayers;
-			static int anders;
+			Audio sound;
 			AudioPlayer()
 			{
 				
@@ -106,9 +111,15 @@ class SmallTalkEngine
                 globalPlayers = tempArray;
 			}
 		};
+        class Texture2D
+        {
+        public:
+            std::texPath;
+        };
 		void selfTest() 
 		{
 			 AudioPlayer::globalPlayers = new AudioPlayer[1];
+             AudioPlayer AudioTest = new AudioPlayer();
 		}
 
 };
