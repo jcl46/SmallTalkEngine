@@ -82,7 +82,9 @@ class SmallTalkEngine
 			float volume;
 			float getVolume() 
 			{
-
+                float volume;
+                volume = 0;
+                return volume;
 			}
 		};
 		class AudioPlayer 
@@ -94,6 +96,14 @@ class SmallTalkEngine
 			{
 				
 				//attach itself to the global list of soundplaying objects
+                int l = globalPlayers.length;
+                AudioPlayer* tempArray = new AudioPlayer[l+1];
+                for (int i = 0; i <= l-1;i++)
+                {
+                    tempArray[i] = globalPlayers[i];
+                }
+                tempArray[l-1] = this;
+                globalPlayers = tempArray;
 			}
 		};
 		void selfTest() 
