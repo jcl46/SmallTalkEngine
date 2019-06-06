@@ -18,6 +18,7 @@ public:
 		fseek(pFile, 0, SEEK_END);
 		lSize = ftell(pFile);
 		rewind(pFile);
+
 		//YES THIS IS INEFFECTIVE!!!! But for now it will be okay (it loads the whole file into memory)
 		buffer = (char*)malloc(sizeof(char)*lSize);
 		result = fread(pFile,1,lSize,pFile);
@@ -33,8 +34,9 @@ public:
 		fseek(pFile, 0, SEEK_END);
 		lSize = ftell(pFile);
 		rewind(pFile);
+
 		//YES THIS IS INEFFECTIVE!!!! But for now it will be okay (it loads the whole file into memory)
 		buffer = (char*)malloc(sizeof(char)*lSize);
-		result = fread(pFile, 1, lSize, pFile);
+		result = fread(buffer, 1, lSize, pFile);
 	}
 };
