@@ -1,11 +1,14 @@
 ﻿#include "SmallTalkMath.h"
-
+#include "SmallTalkUI.h"
+#include "SmallTalkAudio.h"
 //I intend to remove the need for external libs later - but for now i'll use them or... hmm
-class SmallTalkEngine
-{
+#define SmallTalkUI:: UI
+
+	class SmallTalkEngine
+	{
 	public:
 		double version = 0.3;
-		
+
 		class Point2D
 		{
 		public:
@@ -16,12 +19,17 @@ class SmallTalkEngine
 				X = x;
 				Y = y;
 			}
+			Point2D()
+			{
+				X = 0.0f;
+				Y = 0.0f;
+			}
 			float DistanceCalc(Point2D point1, Point2D point2)
 			{
 				Math calc;
 				float temp = point1.X + point2.X;
 				float temp2 = point1.Y + point2.Y;
-				temp = calc.Pow(temp,2);
+				temp = calc.Pow(temp, 2);
 				temp2 = calc.Pow(temp2, 2);
 				temp = temp + temp2;
 				temp = calc.Sqrt(temp);
@@ -55,71 +63,90 @@ class SmallTalkEngine
 			Point2D position;
 			float rotX;
 			float rotY;
-			
+			GameObject2D()
+			{
+
+			}
 
 		};
 		class Area
 		{
 		private:
 			int id;
+		public:
+			GameObject2D objList[0];
+			Area()
+			{
+
+			}
+			void addObject(GameObject2D obj)
+			{
+				int l = getLength(objList);
+				GameObject2D* temp = new GameObject2D[l + 1];
+				objList[l + 1] = obj;
+			}
+			int getLength(GameObject2D objList[])
+			{
+				int result = 0;
+				result = (sizeof(objList) / sizeof(*objList));
+				return result;
+			}
 		};
 		class BoxCollider2D
 		{
 		public:
 			float size;
-			bool isActive;
-			bool isSolid;
-
+			bool IsActive;
+			bool IsSolid;
 			Point2D center;
-			BoxCollider2D(float Size, Point2D Center, isSolid = true, isActive = true) 
+			BoxCollider2D(float Size, Point2D Center, bool isSolid = true, bool isActive = true)
 			{
 
 			}
 		};
-        class Audio
-        {
-        public:
-            std::string audioPath;
-        };
-		class AudioListener 
+		class AudioListener
 		{
 		public:
 			float volume;
-			float getVolume() 
+			float getVolume()
 			{
-                float volume;
-                volume = 0;
-                return volume;
+
+			}
+			int getLength(AudioListener objList[])
+			{
+				int result = 0;
+				result = (sizeof(objList) / sizeof(*objList));
+				return result;
 			}
 		};
-		class AudioPlayer 
+		class AudioPlayer
 		{
 		public:
-			static AudioPlayer* globalPlayers;
-			Audio sound;
 			AudioPlayer()
 			{
-				
+
 				//attach itself to the global list of soundplaying objects
-                int l = globalPlayers.length;
-                AudioPlayer* tempArray = new AudioPlayer[l+1];
-                for (int i = 0; i <= l-1;i++)
-                {
-                    tempArray[i] = globalPlayers[i];
-                }
-                tempArray[l-1] = this;
-                globalPlayers = tempArray;
+			}
+			int getLength(AudioPlayer objList[])
+			{
+				int result = 0;
+				result = (sizeof(objList) / sizeof(*objList));
+				return result;
 			}
 		};
-        class Texture2D
-        {
-        public:
-            std::texPath;
-        };
-		void selfTest() 
+		class Wav
 		{
-			 AudioPlayer::globalPlayers = new AudioPlayer[1];
-             AudioPlayer AudioTest = new AudioPlayer();
+		public:
+			Wav(std::string pathToFile)
+			{
+
+			}
+		};
+		void selfTest()
+		{
+
 		}
+
+
 
 };
