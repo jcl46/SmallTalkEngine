@@ -3,12 +3,6 @@
 #include "SmallTalkAudio.h"
 //I intend to remove the need for external libs later - but for now i'll use them or... hmm
 #define SmallTalkUI:: UI
-
-	class SmallTalkEngine
-	{
-	public:
-		double version = 0.3;
-
 		class Point2D
 		{
 		public:
@@ -149,4 +143,3 @@
 
 
 
-};
