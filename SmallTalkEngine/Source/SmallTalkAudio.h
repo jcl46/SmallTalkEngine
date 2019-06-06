@@ -21,7 +21,7 @@ public:
 
 		//YES THIS IS INEFFECTIVE!!!! But for now it will be okay (it loads the whole file into memory)
 		buffer = (char*)malloc(sizeof(char)*lSize);
-		result = fread(pFile,1,lSize,pFile);
+		result = fread(buffer,1,lSize,pFile);
 	}
 	AudioFile(std::string path, long offset)
 	{
