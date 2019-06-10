@@ -25,5 +25,6 @@ Short Term Goals:
 Long Term Goals
  - An UI editor, that utilizes the headers of the engine
  - (A working engine....)
+ - (Teach Anzo use webhooks correctly, and not fuck everything up...)
  
  This list will be updated as development continues :)
