@@ -8,7 +8,8 @@ if I can continue to work on the project.
 
 Goals being worked on right now:
 
- - Audio playback, and audio file streaming support
+ - ~~Audio playback~~ (Done ^_^)
+ - Audio file streaming support
  
 Short Term Goals:
 
