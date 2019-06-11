@@ -1,8 +1,14 @@
 ﻿#include "SmallTalkMath.h"
 #include "SmallTalkUI.h"
 #include "SmallTalkAudio.h"
-//I intend to remove the need for external libs later - but for now i'll use them or... hmm
-#define SmallTalkUI:: UI
+#include "SmallTalkVideo.h"
+/*
+Welcome to your favorite Nightmare ;)
+Follow the development of the SmallTalkEngine on GitHub
+https://github.com/stuckedstudio/SmallTalkEngine 
+*/
+#pragma warning(disable : 4200)
+
 		class Point2D
 		{
 		public:
@@ -51,15 +57,35 @@
 			}
 
 		};
+		class BoxCollider2D
+		{
+		public:
+			float size;
+			bool IsActive;
+			bool IsSolid;
+			Point2D center;
+			BoxCollider2D(float Size, Point2D Center, bool isSolid = true, bool isActive = true)
+			{
+
+			}
+			BoxCollider2D()
+			{
+				size = 0.0f;
+				IsActive = false;
+				IsSolid = false;
+				center = Point2D(0, 0);
+			}
+		};
 		class GameObject2D
 		{
 		public:
 			Point2D position;
 			float rotX;
 			float rotY;
+			BoxCollider2D collider;
 			GameObject2D()
 			{
-
+				position = Point2D(0, 0);
 			}
 
 		};
@@ -86,18 +112,7 @@
 				return result;
 			}
 		};
-		class BoxCollider2D
-		{
-		public:
-			float size;
-			bool IsActive;
-			bool IsSolid;
-			Point2D center;
-			BoxCollider2D(float Size, Point2D Center, bool isSolid = true, bool isActive = true)
-			{
 
-			}
-		};
 		class AudioListener
 		{
 		public:
@@ -127,6 +142,10 @@
 				result = (sizeof(objList) / sizeof(*objList));
 				return result;
 			}
+			void Play()
+			{
+
+			}
 		};
 		class Wav
 		{
@@ -140,6 +159,9 @@
 		{
 
 		}
-
+		void Draw2D(GameObject2D)
+		{
+		
+		}
 
 
